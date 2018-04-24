@@ -2,6 +2,8 @@
 
 ## GIT
 
+Dentro de um de seus apps instalados:
+
 ### Clone o repositorio 
 
 `git clone https://github.com/paulorobertocruz/django_markdown_ref.git`
@@ -14,11 +16,11 @@
 
 ### Configuração
 ```
-from django_markdown_ref.django_markdown_ref import DjangoMarkdownRef
+from .django_markdown_ref.django_markdown_ref import DjangoMarkdownRef
 
 ref = DjangoMarkdownRef()
 
-ref.model = Model 
+ref.model = MyModel 
 
 markdown("## Algum Markdown", extensions = [ref])
 ```
@@ -28,8 +30,10 @@ markdown("## Algum Markdown", extensions = [ref])
 Defina o metodo abaixo no seu modelo 
 
 ```
-def get_url(self):
-    return "url/para/objeto"
+class MyModel(models.Model):
+
+    def get_url(self):
+        return "/url/para/objeto"
 ```
 
 
