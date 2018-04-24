@@ -11,6 +11,8 @@
 `git submodule add https://github.com/paulorobertocruz/django_markdown_ref.git`
 
 ## No Python
+
+### Configuração
 ```
 from django_markdown_ref.django_markdown_ref import DjangoMarkdownRef
 
@@ -20,6 +22,16 @@ ref.model = Model
 
 markdown("## Algum Markdown", extensions = [ref])
 ```
+
+### Model
+
+Defina o metodo abaixo no seu modelo 
+
+```
+def get_url(self):
+    return "url/para/objeto"
+```
+
 
 ## No Markdown
 ```
